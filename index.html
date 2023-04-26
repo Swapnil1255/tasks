@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="t1">
+            <h1>Calculator</h1>
+            <h6>By Swapnil Kulkarni</h6>
+        </div>
+        <div class="main">
+            <input id="b1" />
+            <button type="button" onclick="clear1()">C</button>
+            <button type="button" onclick="b1.value +='%'">%</button>
+            <button type="button" onclick="clear2()">X</button>
+            <button type="button" onclick="b1.value +='/'">/</button>
+            <button type="button" onclick="show(7)">7</button>
+            <button type="button" onclick="show(8)">8</button>
+            <button type="button" onclick="show(9)">9</button>
+            <button type="button" onclick="b1.value +='*'">*</button>
+            <button type="button" onclick="show(4)">4</button>
+            <button type="button" onclick="show(5)">5</button>
+            <button type="button" onclick="show(6)">6</button>
+            <button type="button" onclick="b1.value +='-'">-</button>
+            <button type="button" onclick="show(1)">1</button>
+            <button type="button" onclick="show(2)">2</button>
+            <button type="button" onclick="show(3)">3</button>
+            <button type="button" onclick="b1.value +='+'">+</button>
+            <button type="button" onclick="show(00)">00</button>
+            <button type="button" onclick="show(0)">0</button>
+            <button type="button" onclick="b1.value +='.'">.</button>
+            <button style="background-color: rgba(184, 115, 12, 0.928);" onclick="result()">=</button>
+        </div>
+    </div>
+    <script>
+        function show(x) {
+            document.getElementById("b1").value += x;
+        }
+        function result() {
+            var equation = document.getElementById("b1").value;
+            var result = eval(equation);
+            document.getElementById("b1").value = result;
+        }
+        function clear1() {
+            document.getElementById("b1").value = '';
+        }
+        function clear2() {
+            var equation = document.getElementById("b1").value;
+            var eqlen = equation.length
+            document.getElementById("b1").value = equation.slice(0, eqlen - 1);
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- <html>
+    <head>
+        <script src="calc.js"></script>
+    </head>
+    <body>
+        <div>
+            <input id="first"/>
+        </div>
+        <div>
+            <input id="second"/>
+        </div>
+        <div>
+            <button onClick="calc('Add')">Add</button>
+            <button onClick="calc('Sub')">Sub</button>
+        </div>
+        <p class="output"></p>
+    </body>
+</html> -->
